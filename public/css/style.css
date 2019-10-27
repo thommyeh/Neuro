@@ -1,0 +1,166 @@
+#account{
+ color: white;
+ background: none;
+ border: none;
+}
+
+#titles{
+ text-align: center;
+}
+
+#labels{
+display: flex;
+flex-direction: column;
+}
+
+#footer{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin-bottom: -100px;
+}
+
+#foot{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#logo5{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#bar{
+background-repeat: no-repeat; 
+ background-size: cover; 
+ background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%), url('9.jpg');
+}
+#pagi{
+color: white;
+}
+
+#pagi a{
+color: white;
+}
+
+#green{
+background-color: #05930a;
+border: solid 2px #05930a;
+border-radius: 5px;
+}
+
+#red{
+background-color: #e01616;
+border: solid 2px #e01616;
+border-radius: 4px;
+}
+
+#responsive{
+display:block !important;
+width:auto !important;
+margin-left:auto !important;
+margin-right:auto !important;
+}
+
+div[style]{
+text-align: center !important;
+margin-left:auto !important;
+margin-right:auto !important;
+}
+
+#coms{
+display:block !important;
+margin-left:auto !important;
+margin-right:auto !important;
+width:auto !important;
+}
+
+#gif{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 300px;
+}
+#home{
+padding-left: 300px;
+}
+#foot1{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+#text-foot1{
+margin-top: 30px;
+}
+#text-foot{
+margin-top: 20px;
+}
+#ft{
+	height: 200px;
+}
+#mood{
+	
+	margin-top: 20px;
+}
+#texte{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+#lien{
+	margin-bottom: 10px;
+}
+
+@media all and (max-width: 800px)
+{
+#coms{
+	font-size: 5px;
+	text-align: left;
+}
+#responsive-upbar{
+	display: none;
+}
+#form_Username, #form_mail, #form_password, #form_password1 {
+	width: 180px;
+
+}
+#fos_user_registration_form_email, #fos_user_registration_form_username,#fos_user_registration_form_plainPassword_first,#fos_user_registration_form_plainPassword_second{
+	width: 180px;
+}
+#ft{
+	height: 60%;
+}
+
+}
+@media all and (max-width: 1024px)
+{
+#coms{
+	font-size: 5px;
+	text-align: left;
+}
+#responsive-upbar{
+	display: none;
+}
+#form_Username, #form_mail, #form_password, #form_password1 {
+	width: 180px;
+
+}
+#fos_user_registration_form_email, #fos_user_registration_form_username,#fos_user_registration_form_plainPassword_first,#fos_user_registration_form_plainPassword_second{
+	
+	display: flex;
+	flex-direction: column;
+
+}
+#ft{
+	height: 60%;
+}
+
+}
+
+
+
+
+
+
+
