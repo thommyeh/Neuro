@@ -91,6 +91,7 @@
             <ul>
               <li>
                     <form action="{{route('search')}}" method="post" class="form-example">
+                            @csrf
                             <div class="form-example">
 
                               <input type="text" name="search" id="search">
