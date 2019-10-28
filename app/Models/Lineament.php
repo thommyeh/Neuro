@@ -11,12 +11,12 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Lineament
- * 
+ *
  * @property int $id
  * @property string $Designation
  * @property string $classification
  * @property string $Content
- * 
+ *
  * @property \Illuminate\Database\Eloquent\Collection $articles
  * @property \Illuminate\Database\Eloquent\Collection $links
  * @property \Illuminate\Database\Eloquent\Collection $molecules

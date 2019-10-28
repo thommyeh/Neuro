@@ -74,11 +74,66 @@
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot"></div>
     </section>
+
+
+
+
     <section class="main-content columns is-fullheight has-background-white-ter">
     @yield('content')
       <!-- Rendering of the Sidebar via the MenuAction, so it can be easily implemented on every pages -->
+      <aside class="column is-3 is-narrow-mobile is-fullheight section is-hidden-mobile">
+        <ul class="menu-list">
+          <li>
+            <a href="#" class="is-active has-background-link">
+              <span class="icon"><i class="fa fa-home"></i></span>
+               Recherche
+            </a>
+            <ul>
+              <li>
+                    <form action="{{route('search')}}" method="post" class="form-example">
+                            <div class="form-example">
 
+                              <input type="text" name="search" id="search">
+                            </div>
+
+
+                            </div>
+                          </form>
+            </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="is-active has-background-link">
+              <span class="icon"><i class="fa fa-table"></i></span>
+               Derniers articles
+            </a>
+            <ul>
+              <li>
+                @foreach($sorted as $article)
+                <p>
+                  <a href="{{ route('show_article', [ 'id'=> $article->id ]) }}">{{$article->Title}}</a>
+                </p>
+                @endforeach
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="is-active has-background-link">
+              <span class="icon"><i class="fa fa-info"></i></span>
+               Catégories
+            </a>
+            <ul>
+              <li>
+               @foreach($categories as $cate)
+                <a class="nav-link" href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->Title}}</a>
+             @endforeach
+            </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
     </section>
+
     <footer class="footer has-background-grey-darker" id="ft">
       <div class="level">
         <div class="level-left">

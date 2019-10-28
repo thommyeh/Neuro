@@ -60,10 +60,18 @@
            @foreach($article as $vg)
            @foreach($vg->poslineaments as $lin)
           <p>
-            <a class="has-text-light" id="green" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->id}}</a>
+            <a class="has-text-light" id="green" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->Designation}}</a>
           </p>
           @endforeach
           @endforeach
+
+           @foreach($article as $vg)
+          @foreach($vg->neglineaments as $lin)
+          <p>
+            <a class="has-text-light" id="red" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->Designation}}</a>
+          </p>
+         @endforeach
+         @endforeach
 
 
         </div>
@@ -75,7 +83,7 @@
             @foreach($article as $vf)
 
 
-            {{$vf->Content}}
+            {!! $vf->Content !!}
 
           @endforeach
         </p>

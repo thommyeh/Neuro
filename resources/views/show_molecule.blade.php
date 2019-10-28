@@ -36,7 +36,7 @@
       <section class="section">
          @foreach($molecule as $vf)
         <p>
-          {{$vf->Content}}
+          {!! $vf->Content !!}
         </p>
         @endforeach
       </section>

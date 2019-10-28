@@ -13,6 +13,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Poslineament
  *
  * @property int $id
+ * @property string $Designation
  *
  * @property \App\Models\Lineament $lineament
  * @property \Illuminate\Database\Eloquent\Collection $articles
@@ -27,6 +28,10 @@ class Poslineament extends Eloquent
 
 	protected $casts = [
 		'id' => 'int'
+    ];
+    protected $fillable = [
+		'Designation'
+
 	];
 
 	public function lineament()
@@ -37,5 +42,7 @@ class Poslineament extends Eloquent
 	public function articles()
 	{
 		return $this->belongsToMany(\App\Models\Article::class);
-	}
+    }
+
+
 }

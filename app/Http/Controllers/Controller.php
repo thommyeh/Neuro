@@ -90,5 +90,21 @@ class Controller extends BaseController
 
 
     }
+
+    public function search(){
+
+        $key = request('search');
+        $articles = Article::where('Title', 'like', '%' . $key . '%')->get();
+        $molecules = Molecule::where('Designation', 'like', '%' . $key . '%')->get();
+        $articles = Lineament::where('Designation', 'like', '%' . $key . '%')->get();
+        var_dump($articles);
+        die();
+
+
+
+        return View('results', [ 'articles' => $articles, 'molecules' => $molecules, 'lineaments' => $lineaments]);
+
+
+    }
 }
 

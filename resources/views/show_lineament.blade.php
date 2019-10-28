@@ -36,7 +36,7 @@
       <section class="section">
          @foreach($lineament as $vf)
         <p>
-          {{$vf->Content}}
+          {!! $vf->Content !!}
         </p>
         @endforeach
       </section>

@@ -6,7 +6,7 @@
     <div class="box">
       <h1 class="title" id="titles">Pourquoi Interface Neuronale?</h1>
       <p>
-        <img src="" id="logo5">
+        <img src="{{ asset('img/logo6.jpg') }}" id="logo5">
       </p>
       <br>
       <p>
