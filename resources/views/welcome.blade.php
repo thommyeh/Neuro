@@ -24,14 +24,14 @@
     </div>
     <div class="box">
       <p>
-        <h3 class="title" id="titles">Actualités liées a la neurologie</h3>
+        <h3 class="title" id="titles">Dernières actualités liées a la neurologie</h3>
       </p>
       <br>
-     
+
       <p id="liens">
      @foreach($links as $liens)
-     
-     
+
+
         <a href='{{$liens->Url}}'>{{$liens->Title}}</a>
       </p>
       @endforeach

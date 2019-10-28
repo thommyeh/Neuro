@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container column is-8">
+	<section class="section">
+	
+        
+		<div class="container column is-8">
+			<h1 id="titles">{{message}}</h1>
+		</div>
+		<div class="container column is-3">
+		<a href="{{ path('homepage') }}">Retourner a l'Accueil</a> 
+	</div>
+	</section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% block body %}
+<aside class="column is-3 is-narrow-mobile is-fullheight section is-hidden-mobile">
+  <ul class="menu-list">
+    <li>
+      <a href="#" class="is-active has-background-link">
+        <span class="icon"><i class="fa fa-home"></i></span>
+         Recherche
+      </a>
+      <ul>
+        <li>
+        {{ form_start(form, { 'attr': {'action': path('results')} }) }}
+        {{ form_widget(form, { 'attr': {'class': 'form_age'} }) }}
+        {{ form_end(form) }}</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="is-active has-background-link">
+        <span class="icon"><i class="fa fa-table"></i></span>
+         Derniers articles
+      </a>
+      <ul>
+        <li>
+          {% for article in sorted %}  
+          <p>
+            <a href="{{ path('show_article', { 'id': article.id }) }}">{{article.title}}</a>
+          </p>
+          {% endfor %}
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="is-active has-background-link">
+        <span class="icon"><i class="fa fa-info"></i></span>
+         Catégories
+      </a>
+      <ul>
+        <li>
+          {% for cat in cate %}
+          <a class="nav-link" href="{{ path('category', { 'key': cat.title }) }}">{{cat.title}}</a>
+        {% endfor %}
+      </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

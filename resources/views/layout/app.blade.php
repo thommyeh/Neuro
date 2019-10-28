@@ -28,21 +28,21 @@
                 </div>
                 <div class="dropdown-menu is-boxed" id="dropdown-menu4" role="menu">
                   <div class="dropdown-content has-background-grey-dark">
-                   
+
                     <div class="dropdown-item">
                       <a class="has-text-light" href="">Votre compte</a>
                     </div>
                     <div class="dropdown-item">
                       <a class="has-text-light" href="">Se déconnecter</a>
                     </div>
-                   
+
                     <div class="dropdown-item">
                       <a class="has-text-light"  href="/login">Se connecter</a>
                     </div>
                     <div class="dropdown-item">
                       <a class="has-text-light" href="/register">Créer un compte</a>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -54,10 +54,10 @@
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active" href="">Accueil</a>
-                <a class="navbar-item" href="">Articles</a>
-                <a href="" class="navbar-item">Molécules/Neurones</a>
-                <a href="" class="navbar-item">Traits de personnalités</a>
+                <a class="navbar-item" href="{{route('home')}}">Accueil</a>
+                <a class="navbar-item" href="{{route('allArticles')}}">Articles</a>
+                <a href="{{route('allMolecules')}}" class="navbar-item">Molécules/Neurones</a>
+                <a href="{{route('allLineaments')}}" class="navbar-item">Traits de personnalités</a>
                 <a class="navbar-item">Contactez nous</a>
               </div>
             </div>
@@ -77,7 +77,7 @@
     <section class="main-content columns is-fullheight has-background-white-ter">
     @yield('content')
       <!-- Rendering of the Sidebar via the MenuAction, so it can be easily implemented on every pages -->
-      
+
     </section>
     <footer class="footer has-background-grey-darker" id="ft">
       <div class="level">
@@ -150,24 +150,24 @@
 <div>
         <p class="has-text-white has-text-centered" id="text-foot">
           <strong class="has-text-white has-text-weight-normal is-size-6">Interface neuronale</strong>
-           par 
+           par
           <a href="https://jgthms.com">Heym Thomas</a>
         </p>
       </div>
 <div>
           <p class="has-text-white has-text-centered" id="text-foot1">
-        <a href="" target="_blank">Mentions légales</a> 
+        <a href="" target="_blank">Mentions légales</a>
       </p>
     </div>
       </div>
     </footer>
-     
+
      <script>
-    
+
 </script>
     <script src="{{ asset('js/bulma.js') }}"></script>
      <script src="{{ asset('js/ind.js') }}"></script>
-{% endblock %} 
+
   </body>
 </html>
 

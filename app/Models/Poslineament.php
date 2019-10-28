@@ -11,9 +11,9 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Poslineament
- * 
+ *
  * @property int $id
- * 
+ *
  * @property \App\Models\Lineament $lineament
  * @property \Illuminate\Database\Eloquent\Collection $articles
  *
