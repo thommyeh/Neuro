@@ -7,22 +7,22 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Molecule
- * 
+ *
  * @property int $id
  * @property string $Designation
  * @property string $Content
- * 
+ *
  * @property \Illuminate\Database\Eloquent\Collection $articles
  * @property \Illuminate\Database\Eloquent\Collection $lineaments
  * @property \Illuminate\Database\Eloquent\Collection $links
  *
  * @package App\Models
  */
-class Molecule extends Eloquent
+class Molecule extends Model
 {
 	protected $table = 'molecule';
 	public $timestamps = false;

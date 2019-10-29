@@ -7,23 +7,23 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Link
- * 
+ *
  * @property int $id
  * @property string $Url
  * @property string $Title
  * @property \Carbon\Carbon $Datec
- * 
+ *
  * @property \Illuminate\Database\Eloquent\Collection $articles
  * @property \Illuminate\Database\Eloquent\Collection $lineaments
  * @property \Illuminate\Database\Eloquent\Collection $molecules
  *
  * @package App\Models
  */
-class Link extends Eloquent
+class Link extends Model
 {
 	protected $table = 'link';
 	public $timestamps = false;

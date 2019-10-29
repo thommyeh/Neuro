@@ -7,19 +7,19 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Category
- * 
+ *
  * @property int $id
  * @property string $Title
- * 
+ *
  * @property \Illuminate\Database\Eloquent\Collection $articles
  *
  * @package App\Models
  */
-class Category extends Eloquent
+class Category extends Model
 {
 	protected $table = 'category';
 	public $timestamps = false;

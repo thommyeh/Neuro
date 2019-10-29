@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Lineament
@@ -25,7 +25,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Lineament extends Eloquent
+class Lineament extends Model
 {
 	protected $table = 'lineament';
 	public $timestamps = false;

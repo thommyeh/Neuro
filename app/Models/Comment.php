@@ -7,22 +7,22 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Comment
- * 
+ *
  * @property int $id
  * @property int $article
  * @property int $user
  * @property string $Content
  * @property string $Datec
- * 
+ *
  * @property \App\Models\FosUser $fos_user
  *
  * @package App\Models
  */
-class Comment extends Eloquent
+class Comment extends Model
 {
 	protected $table = 'comment';
 	public $timestamps = false;

@@ -7,20 +7,20 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ArticleCategory
- * 
+ *
  * @property int $article_id
  * @property int $category_id
- * 
+ *
  * @property \App\Models\Category $category
  * @property \App\Models\Article $article
  *
  * @package App\Models
  */
-class ArticleCategory extends Eloquent
+class ArticleCategory extends Model
 {
 	protected $table = 'article_category';
 	public $incrementing = false;

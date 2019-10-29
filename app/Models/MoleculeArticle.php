@@ -7,20 +7,20 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class MoleculeArticle
- * 
+ *
  * @property int $molecule_id
  * @property int $article_id
- * 
+ *
  * @property \App\Models\Article $article
  * @property \App\Models\Molecule $molecule
  *
  * @package App\Models
  */
-class MoleculeArticle extends Eloquent
+class MoleculeArticle extends Model
 {
 	protected $table = 'molecule_article';
 	public $incrementing = false;
