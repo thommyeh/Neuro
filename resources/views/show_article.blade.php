@@ -120,7 +120,22 @@
         @endforeach
       </section>
     </div>
+    @auth
+     @foreach($article as $article_id)
+    <form action="{{route('post_comment', [ 'id'=> $article_id->id ])}}" method="POST">
+        @csrf
+
+            <textarea id="content" name="content" cols="87" rows="5" style="line-height: 105%">Ecrivez ici votre commentaire</textarea>
+            <button type="submit" class="button is-link">Envoyer</button>
+          </form>
+          @endforeach
+          @endauth
+
+          @guest
+             <p>Vous devez être connecté pour pouvoir poster un commentaire</p>
+          @endguest
   </section>
+
 </div>
 
 

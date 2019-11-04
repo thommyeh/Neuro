@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $Content
  * @property string $Datec
  *
- * @property \App\Models\FosUser $fos_user
+ * @property \App\User $user
  *
  * @package App\Models
  */
@@ -27,10 +27,7 @@ class Comment extends Model
 	protected $table = 'comment';
 	public $timestamps = false;
 
-	protected $casts = [
-		'article' => 'int',
-		'user' => 'int'
-	];
+
 
 	protected $fillable = [
 		'article',
@@ -44,8 +41,8 @@ class Comment extends Model
 		return $this->belongsTo(\App\Models\Article::class, 'article');
 	}
 
-	public function fos_user()
+	public function user()
 	{
-		return $this->belongsTo(\App\Models\FosUser::class, 'user');
+		return $this->belongsTo(\App\User::class, 'user');
 	}
 }

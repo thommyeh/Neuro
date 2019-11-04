@@ -4,6 +4,10 @@
  border: none;
 }
 
+#boutonedit{
+    margin-top: 5px;
+}
+
 #titles{
  text-align: center;
 }
@@ -33,8 +37,8 @@ margin-right: auto;
 }
 
 #bar{
-background-repeat: no-repeat; 
- background-size: cover; 
+background-repeat: no-repeat;
+ background-size: cover;
  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%), url('9.jpg');
 }
 #pagi{
@@ -101,7 +105,7 @@ margin-top: 20px;
 	height: 200px;
 }
 #mood{
-	
+
 	margin-top: 20px;
 }
 #texte{
@@ -147,7 +151,7 @@ margin-top: 20px;
 
 }
 #fos_user_registration_form_email, #fos_user_registration_form_username,#fos_user_registration_form_plainPassword_first,#fos_user_registration_form_plainPassword_second{
-	
+
 	display: flex;
 	flex-direction: column;
 

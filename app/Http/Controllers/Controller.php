@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UrlRequest;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Link;
 use App\Models\Article;
 use App\Models\Molecule;
 use App\Models\Lineament;
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\User;
 
 class Controller extends BaseController
 {
@@ -104,6 +109,30 @@ class Controller extends BaseController
 
 
         return View('results', [ 'articles' => $articles, 'molecules' => $molecules, 'lineaments' => $lineaments]);
+
+
+    }
+
+    public function postComment(Request $request, $id){
+
+        $user = Auth::user();
+        $article_id = $id;
+
+        $comment = new Comment();
+        $comment->Content = $request->input('content');
+        $comment->article = $article_id;
+        $comment->user = $user->id;
+        $comment->Datec = now();
+        $comment->save();
+
+
+
+
+
+
+
+
+        return View('show_article', [ 'article' => $article_id]);
 
 
     }

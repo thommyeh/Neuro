@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     @component('components.full-page-section')
@@ -11,15 +11,15 @@
 
         @component('components.card')
             @slot('title')
-                {{ __('Verify Your Email Address') }}
+                {{ __('Verifiez votre adresse e-mail') }}
             @endslot
 
             <div class="content">
                 <p>
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('Veuillez valider votre adresse e-mail avant de continuer') }}
                 </p>
                 <p>
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                    {{ __("Si vous n'avez pas reçu l'e-mail") }}, <a href="{{ route('verification.resend') }}">{{ __('cliquez ici pour en recevoir un nouveau') }}</a>.
                 </p>
             </div>
         @endcomponent

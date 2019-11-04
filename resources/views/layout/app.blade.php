@@ -29,20 +29,24 @@
                 <div class="dropdown-menu is-boxed" id="dropdown-menu4" role="menu">
                   <div class="dropdown-content has-background-grey-dark">
 
-                    <div class="dropdown-item">
-                      <a class="has-text-light" href="">Votre compte</a>
-                    </div>
-                    <div class="dropdown-item">
-                      <a class="has-text-light" href="">Se déconnecter</a>
-                    </div>
 
+                    @guest
                     <div class="dropdown-item">
                       <a class="has-text-light"  href="/login">Se connecter</a>
                     </div>
+                    @if (Route::has('register'))
                     <div class="dropdown-item">
                       <a class="has-text-light" href="/register">Créer un compte</a>
                     </div>
-
+                    @endif
+                    @else
+                    <div class="dropdown-item">
+                        <a class="has-text-light" href="/profil">Votre compte</a>
+                      </div>
+                      <div class="dropdown-item">
+                        <a class="has-text-light" href="/logout">Se déconnecter</a>
+                      </div>
+                      @endguest
                   </div>
                 </div>
               </div>
