@@ -3,8 +3,8 @@
 namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
-use App\Models\Article;
-use App\Models\Category;
+use App\Article;
+use App\Category;
 
 
 class ProfileComposer
@@ -33,7 +33,7 @@ class ProfileComposer
     public function compose(View $view)
     {
 
-        $sorted = Article::orderBy('Datec', 'desc')->take(5)->get();
+        $sorted = Article::orderBy('created_at', 'desc')->take(5)->get();
         $categories = Category::all();
 
 

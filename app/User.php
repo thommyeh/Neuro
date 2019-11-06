@@ -2,16 +2,15 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-
+use App\Comment;
 
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    protected $table = 'fos_user';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'email_verified_at',
     ];
 
     /**
@@ -31,12 +30,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

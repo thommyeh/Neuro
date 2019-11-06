@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UrlRequest;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use App\Models\Link;
-use App\Models\Article;
-use App\Models\Molecule;
-use App\Models\Lineament;
-use App\Models\Category;
-use App\Models\Comment;
-use App\Models\User;
+use App\Link;
+use App\Article;
+use App\Molecule;
+use App\Lineament;
+use App\Category;
+use App\Comment;
+use App\User;
 
 class Controller extends BaseController
 {
@@ -23,7 +23,7 @@ class Controller extends BaseController
 
     public function home(){
 
-        $links = Link::orderBy('Datec', 'desc')->take(5)->get();
+        $links = Link::orderBy('created_at', 'desc')->take(5)->get();
 
 
         return View('welcome', ['links' => $links]);
