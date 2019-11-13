@@ -15,9 +15,9 @@ class CreateLineamentsTable extends Migration
     {
         Schema::create('lineaments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('designation');
-            $table->string('classification');
-            $table->string('content');
+            $table->string('title');
+            $table->string('classification')->nullable();
+            $table->text('content');
             $table->timestamps();
         });
     }

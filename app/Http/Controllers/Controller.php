@@ -29,6 +29,119 @@ class Controller extends BaseController
         return View('welcome', ['links' => $links]);
     }
 
+    public function admin(){
+
+
+
+        return View('admin');
+    }
+
+    public function create(){
+
+        $molecules = Molecule::all();
+        $articles = Article::all();
+        $lineaments = Lineament::all();
+        $categories = Category::all();
+        $links = Link::all();
+
+
+        return View('create_article', ['molecules' => $molecules, 'articles' => $articles, 'lineaments' => $lineaments, 'categories' => $categories, 'links' => $links] );
+    }
+
+    public function list(){
+
+        $articles = Article::all();
+
+        return View('list', ['articles' => $articles]);
+    }
+
+    public function edit($id){
+
+        $articles = Article::where('id', $id)->get();
+
+        return View('edit', ['articles' => $articles]);
+    }
+
+    public function createArticle(Request $request){
+
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+
+        if ($request->input('type') == 'article') {
+            var_dump($request->input('molecule'));
+            die();
+            $data = new Article();
+            $data->title = $title;
+            $data->content = $content;
+            $data->save();
+            if ($request->input('molecule') != NULL) {
+                $molecule = Molecule::find($request->input('molecule'));
+                $data->molecules()->attach($molecule);
+            }
+            if ($request->input('article') != NULL) {
+                $article = Article::find($request->input('article'));
+                $data->artcles()->attach($article);
+            }
+
+
+
+
+        }
+        if ($request->input('type') == 'molecule') {
+            $data = new Molecule();
+            $data->title = $title;
+            $data->content = $content;
+            $data->save();
+        }
+        if ($request->input('type') == 'trait') {
+            $data = new Lineament();
+            $data->title = $title;
+            $data->content = $content;
+            $data->save();
+        }
+
+        if ($request->input('type') == 'lien') {
+            $data = new Link();
+            $data->title = $title;
+            $data->url = $content;
+            $data->save();
+        }
+
+        if ($request->input('type') == 'cate') {
+            $data = new Category();
+            $data->title = $title;
+            $data->save();
+        }
+
+
+
+
+
+        return View('admin');
+    }
+
+    public function editContent(Request $request, $id){
+
+
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        $data = Article::where('id', $id)->first();
+        $data->title = $title;
+        $data->content = $content;
+        $data->save();
+
+
+
+
+
+
+
+
+        return View('home');
+    }
+
     public function allArticles(){
 
         $articles = Article::all();

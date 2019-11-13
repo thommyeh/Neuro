@@ -9,7 +9,7 @@ class Lineament extends Model
     public $timestamps = true;
 
     protected $fillable = [
-		'designation',
+		'title',
 		'classification',
 		'Content',
     ];
