@@ -15,16 +15,16 @@ class Molecule extends Model
 
     public function lineaments()
     {
-        return $this->belongsTo('App\Lineament');
+        return $this->belongsToMany('App\Lineament');
     }
 
     public function links()
     {
-        return $this->belongsTo('App\Link');
+        return $this->belongsToMany('App\Link');
     }
 
     public function articles()
     {
-        return $this->belongsTo('App\Article');
+        return $this->belongsToMany('App\Article');
     }
 }

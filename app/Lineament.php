@@ -16,16 +16,16 @@ class Lineament extends Model
 
     public function molecules()
     {
-        return $this->belongsTo('App\Molecule');
+        return $this->belongsToMany('App\Molecule');
     }
 
     public function links()
     {
-        return $this->belongsTo('App\Link');
+        return $this->belongsToMany('App\Link');
     }
 
     public function articles()
     {
-        return $this->belongsTo('App\Article');
+        return $this->belongsToMany('App\Article');
     }
 }

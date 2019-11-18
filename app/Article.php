@@ -15,22 +15,22 @@ class Article extends Model
 
     public function categories()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsToMany('App\Category');
     }
 
     public function lineaments()
     {
-        return $this->belongsTo('App\Lineament');
+        return $this->belongsToMany('App\Lineament');
     }
 
     public function molecules()
     {
-        return $this->belongsTo('App\Molecule');
+        return $this->belongsToMany('App\Molecule');
     }
 
     public function links()
     {
-        return $this->belongsTo('App\Link');
+        return $this->belongsToMany('App\Link');
     }
 
     public function comments()

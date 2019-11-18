@@ -12,16 +12,16 @@ class Link extends Model
 
     public function articles()
     {
-        return $this->belongsTo('App\Article');
+        return $this->belongsToMany('App\Article');
     }
 
     public function lineaments()
     {
-        return $this->belongsTo('App\Lineament');
+        return $this->belongsToMany('App\Lineament');
     }
 
     public function molecules()
     {
-        return $this->belongsTo('App\Molecule');
+        return $this->belongsToMany('App\Molecule');
     }
 }

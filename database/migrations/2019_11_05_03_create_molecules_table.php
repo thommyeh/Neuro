@@ -15,8 +15,8 @@ class CreateMoleculesTable extends Migration
     {
         Schema::create('molecules', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('designation');
-            $table->string('content');
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
         });
     }
