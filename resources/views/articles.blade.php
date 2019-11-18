@@ -6,7 +6,7 @@
 		<div class="box has-background-white-bis">
 			@foreach($articles as $article)
 			<div class="box has-background-link">
-				<h1 class="title" id="titles"><a class="has-text-light" href="{{route('show_article', ['id' => $article->id])}}">{{$article->Title}}</a></h1>
+				<h1 class="title" id="titles"><a class="has-text-light" href="{{route('show_article', ['id' => $article->id])}}">{{$article->title}}</a></h1>
 				<div class="box has-background-white">
 					<strong><p>Molécules/Neurones liés</p></strong>
 					@foreach($article->molecules as $neuro)

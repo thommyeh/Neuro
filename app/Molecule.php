@@ -9,7 +9,7 @@ class Molecule extends Model
     public $timestamps = true;
 
     protected $fillable = [
-		'designation',
+		'title',
 		'content',
     ];
 
