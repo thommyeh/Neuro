@@ -116,7 +116,7 @@
               <li>
                 @foreach($sorted as $article)
                 <p>
-                  <a href="{{ route('show_article', [ 'id'=> $article->id ]) }}">{{$article->Title}}</a>
+                  <a href="{{ route('show_article', [ 'id'=> $article->id ]) }}">{{$article->title}}</a>
                 </p>
                 @endforeach
               </li>
@@ -130,7 +130,7 @@
             <ul>
               <li>
                @foreach($categories as $cate)
-                <a class="nav-link" href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->Title}}</a>
+                <a class="nav-link" href="{{ route('show_category', [ 'key'=> $cate->title ]) }}">{{$cate->title}}</a>
              @endforeach
             </li>
             </ul>

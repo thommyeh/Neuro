@@ -80,7 +80,7 @@ return [
 
     'database' => [
         'tables' => [
-            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
+            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings', 'article_category', 'article_lineament', 'article_link', 'article_molecule', 'lineament_link', 'lineament_molecule', 'failed_jobs', 'link_molecule', 'translations', 'user_roles', 'menus', 'permissions', 'roles' ],
         ],
         'autoload_migrations' => true,
     ],
@@ -191,7 +191,7 @@ return [
     ],
 
     'additional_js' => [
-        //'js/custom.js',
+        'js/voyager_tinymce.js',
     ],
 
     'googlemaps' => [

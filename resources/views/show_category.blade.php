@@ -4,9 +4,9 @@
 	<section class="section">
 		<h1 class="title" id="titles">Articles de la catégorie {{$titre}}</h1>
         @foreach($category as $article)
-         @foreach($article->articles as $title)
+         @foreach($article->article as $title)
 		<div class="box has-background-link">
-			<h1 class="title" id="titles"><a class="nav-link has-text-white-ter" href="{{ route('show_article', [ 'id'=> $title->id ]) }}">{{$title->Title}}</a></h1>
+			<h1 class="title" id="titles"><a class="nav-link has-text-white-ter" href="{{ route('show_article', [ 'id'=> $title->id ]) }}">{{$title->title}}</a></h1>
 		</div>
     @endforeach
     @endforeach

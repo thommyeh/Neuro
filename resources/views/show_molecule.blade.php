@@ -3,7 +3,7 @@
 <div class="container column is-8">
   <section class="section">
      @foreach($molecule as $vf)
-    <h1 class="title" id="titles">{{$vf->Designation}}</h1>
+    <h1 class="title" id="titles">{{$vf->title}}</h1>
      @endforeach
     <div class="level">
       <div class="level-left">
@@ -13,7 +13,7 @@
           </p>
           @foreach($molecule as $article)
            @foreach($article->articles as $titre)
-          <a class="nav-link" href="{{ route('show_article', [ 'id'=> $titre->id ]) }}">{{$titre->Title}}</a>
+          <a class="nav-link" href="{{ route('show_article', [ 'id'=> $titre->id ]) }}">{{$titre->title}}</a>
           @endforeach
           @endforeach
         </div>
@@ -26,7 +26,7 @@
            @foreach($molecule as $trait)
            @foreach($trait->lineaments as $des)
 
-          <a class="nav-link" href="{{ route('show_lineament', [ 'id'=> $des->id ]) }}">{{$des->Designation}}</a>
+          <a class="nav-link" href="{{ route('show_lineament', [ 'id'=> $des->id ]) }}">{{$des->title}}</a>
          @endforeach
          @endforeach
         </div>
@@ -36,7 +36,7 @@
       <section class="section">
          @foreach($molecule as $vf)
         <p>
-          {!! $vf->Content !!}
+          {!! $vf->content !!}
         </p>
         @endforeach
       </section>
@@ -48,7 +48,7 @@
            @foreach($vf->links as $link)
 
         <p>
-          <a href="{{ $link->Url}}">{{$link->Title}}</a>
+          <a href="{{ $link->url}}">{{$link->title}}</a>
         </p>
         @endforeach
         @endforeach

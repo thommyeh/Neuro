@@ -6,7 +6,7 @@
   <section class="section">
     @foreach($article as $art)
     <p>
-      <h1 class="title" id="titles">{{$art->Title}}</h1>
+      <h1 class="title" id="titles">{{$art->title}}</h1>
     </p>
      @endforeach
     <div class="level">
@@ -18,7 +18,7 @@
           @foreach($article as $art)
           @foreach($art->categories as $cate)
           <p>
-            <a href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->Title}}</a>
+            <a href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->title}}</a>
           </p>
             @endforeach
             @endforeach
@@ -46,7 +46,7 @@
            @foreach($vi->molecules as $molecule)
 
           <p>
-            <a href="{{ route('show_molecule', [ 'id'=> $molecule->id ]) }}">{{$molecule->Designation}}</a>
+            <a href="{{ route('show_molecule', [ 'id'=> $molecule->id ]) }}">{{$molecule->title}}</a>
           </p>
          @endforeach
          @endforeach
@@ -58,17 +58,17 @@
             <strong>Effets associés</strong>
           </p>
            @foreach($article as $vg)
-           @foreach($vg->poslineaments as $lin)
+           @foreach($vg->lineaments as $lin)
           <p>
-            <a class="has-text-light" id="green" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->Designation}}</a>
+            <a class="has-text-light" id="green" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->title}}</a>
           </p>
           @endforeach
           @endforeach
 
            @foreach($article as $vg)
-          @foreach($vg->neglineaments as $lin)
+          @foreach($vg->lineaments as $lin)
           <p>
-            <a class="has-text-light" id="red" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->Designation}}</a>
+            <a class="has-text-light" id="red" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->title}}</a>
           </p>
          @endforeach
          @endforeach
@@ -83,7 +83,7 @@
             @foreach($article as $vf)
 
 
-            {!! $vf->Content !!}
+            {!! $vf->content !!}
 
           @endforeach
         </p>
@@ -95,7 +95,7 @@
         @foreach($article as $ve)
         @foreach($ve->links as $link)
         <p>
-          <a href="{{ $link->Url}}">{{$link->Title}}</a>
+          <a href="{{ $link->Url}}">{{$link->title}}</a>
         </p>
        @endforeach
        @endforeach

@@ -36,7 +36,7 @@ class Controller extends BaseController
         return View('admin');
     }
 
-    public function create(){
+    public function createContent(){
 
         $molecules = Molecule::all();
         $articles = Article::all();
@@ -200,7 +200,7 @@ class Controller extends BaseController
 
     public function showCategory($key){
 
-        $category = Category::where('Title', $key)->get();
+        $category = Category::where('title', $key)->get();
 
 
 

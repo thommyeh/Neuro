@@ -6,12 +6,12 @@
 		<div class="box has-background-white-bis">
 			 @foreach($molecules as $vf)
 			<div class="box has-background-link">
-				<h1 class="title" id="titles"><a class="has-text-light" href="{{ route('show_molecule', [ 'id'=> $vf->id ]) }}">{{$vf->Designation}}</a></h1>
+				<h1 class="title" id="titles"><a class="has-text-light" href="{{ route('show_molecule', [ 'id'=> $vf->id ]) }}">{{$vf->title}}</a></h1>
 				<div class="box has-background-white">
 					<strong><p>Articles liés:</p></strong>
 				 @foreach($vf->articles as $article)
 					<p>
-						<a href="{{route('show_article', ['id' => $article->id])}}">{{$article->Title}}</a>
+						<a href="{{route('show_article', ['id' => $article->id])}}">{{$article->title}}</a>
 					</p>
 					@endforeach
 				</div>
@@ -20,7 +20,7 @@
 
                          @foreach($vf->lineaments as $traits)
                          <p>
-                        <a href="{{ route('show_lineament', [ 'id'=> $traits->id ]) }}">{{$traits->Designation}} </a>
+                        <a href="{{ route('show_lineament', [ 'id'=> $traits->id ]) }}">{{$traits->title}} </a>
                     </p>
 						@endforeach
 
