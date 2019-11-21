@@ -13,11 +13,7 @@
 
 Route::get('/', 'Controller@home')->name('home');
 Route::get('/admin', 'Controller@admin')->name('admin');
-Route::get('/admin/create', 'Controller@createContent')->name('creation_page');
 Route::get('/admin/list', 'Controller@list')->name('list');
-Route::get('/admin/edit/{id}', 'Controller@edit')->name('editpage');
-Route::post('/admin/edit/{id}', 'Controller@editContent')->name('Content');
-Route::post('/create', 'Controller@createArticle')->name('create');
 Route::get('/articles', 'Controller@allArticles')->name('allArticles');
 Route::get('/molecules', 'Controller@allMolecules')->name('allMolecules');
 Route::get('lineaments', 'Controller@allLineaments')->name('allLineaments');

@@ -4,6 +4,18 @@
  border: none;
 }
 
+#com{
+    margin-left: 5px;
+}
+
+#coms{
+    margin-top: -35px;
+}
+
+#combutton{
+    margin-top: 10px;
+}
+
 #boutonedit{
     margin-top: 5px;
 }

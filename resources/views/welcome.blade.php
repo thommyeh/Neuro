@@ -32,7 +32,7 @@
      @foreach($links as $liens)
 
 
-        <a href='{{$liens->Url}}'>{{$liens->Title}}</a>
+        <a href='{{$liens->url}}'>{{$liens->title}}</a>
       </p>
       @endforeach
     </div>

@@ -1,16 +1,12 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Interface neuronale</title>
-    <meta name="description" content="website description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="website keywords, website keywords" />
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-    </script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+
   </head>
   <body>
     <section class="hero is-info is-medium has-text-white-bis" id="bar">
@@ -225,8 +221,8 @@
      <script>
 
 </script>
-    <script src="{{ asset('js/bulma.js') }}"></script>
-     <script src="{{ asset('js/ind.js') }}"></script>
+
+
 
   </body>
 </html>

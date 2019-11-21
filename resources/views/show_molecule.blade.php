@@ -9,11 +9,16 @@
       <div class="level-left">
         <div class="level-item" id="labels">
           <p>
+
             <strong>Articles associés</strong>
           </p>
           @foreach($molecule as $article)
            @foreach($article->articles as $titre)
-          <a class="nav-link" href="{{ route('show_article', [ 'id'=> $titre->id ]) }}">{{$titre->title}}</a>
+
+
+
+<a class="list is-hoverable" href="{{ route('show_article', [ 'id'=> $titre->id ]) }}">{{$titre->title}}</a>
+
           @endforeach
           @endforeach
         </div>
