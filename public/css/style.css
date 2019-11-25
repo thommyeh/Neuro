@@ -12,6 +12,18 @@
     margin-top: -35px;
 }
 
+#dropdown-menu6{
+    width:40vw;
+    position: absolute;
+    left: 0;
+  }
+
+#dropdown-menu5{
+    width:10vw;
+    position: absolute;
+    left: 0;
+}
+
 #combutton{
     margin-top: 10px;
 }

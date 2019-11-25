@@ -6,6 +6,7 @@
     <meta name="keywords" content="website keywords, website keywords" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
   </head>
   <body>
@@ -37,10 +38,12 @@
                     @endif
                     @else
                     <div class="dropdown-item">
-                        <a class="has-text-light" href="/profil">Votre compte</a>
+                        <a class="has-text-light" href="/profil">Votre compte
+                        <span class="icon"><i class="fa fa-user"></i></span></a>
                       </div>
                       <div class="dropdown-item">
-                        <a class="has-text-light" href="/logout">Se déconnecter</a>
+                        <a class="has-text-light" href="/logout">Se déconnecter
+                            <span class="icon"><i class="fa fa-sign-out-alt"></i></span></a>
                       </div>
                       @endguest
                   </div>
@@ -85,7 +88,7 @@
         <ul class="menu-list">
           <li>
             <a href="#" class="is-active has-background-link">
-              <span class="icon"><i class="fa fa-home"></i></span>
+              <span class="icon"><i class="fa fa-search"></i></span>
                Recherche
             </a>
             <ul>
@@ -105,7 +108,7 @@
           </li>
           <li>
             <a href="#" class="is-active has-background-link">
-              <span class="icon"><i class="fa fa-table"></i></span>
+              <span class="icon"><i class="fa fa-newspaper"></i></span>
                Derniers articles
             </a>
             <ul>
@@ -120,7 +123,7 @@
           </li>
           <li>
             <a href="#" class="is-active has-background-link">
-              <span class="icon"><i class="fa fa-info"></i></span>
+              <span class="icon"><i class="fa fa-bars"></i></span>
                Catégories
             </a>
             <ul>

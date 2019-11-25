@@ -28,17 +28,42 @@
     <div class="level">
       <div class="level-left">
         <div class="level-item" id="labels">
-          <p>
-            <strong>Catégories</strong>
-          </p>
-          @foreach($article as $art)
+
+                <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span ><strong>Catégories</strong></span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu " id="dropdown-menu5" role="menu">
+                          <div class="dropdown-content has-background-white">
+                            <div class="dropdown-item">
+                                    @foreach($article as $art)
           @foreach($art->categories as $cate)
           <p>
-            <a href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->title}}</a>
+            <a class="nav-link has-text-grey-dark is-family-primary has-text-weight-semibold is-size-6" href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->title}}</a>
           </p>
-            @endforeach
-            @endforeach
+                              <hr class="dropdown-divider">
+                              @endforeach
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+                      </div>
         </div>
+
+
+
+
+
+
+
+
+
+
         <div class="level-item" id="responsive-upbar"></div>
         <div class="level-item" id="responsive-upbar"></div>
         <div class="level-item" id="responsive-upbar"></div>
@@ -54,47 +79,101 @@
         <div class="level-item" id="responsive-upbar"></div>
         <div class="level-item" id="responsive-upbar"></div>
         <div class="level-item" id="responsive-upbar"></div>
-        <div class="level-item" id="responsive-upbar"></div>
-        <div class="level-item" id="responsive-upbar"></div>
-        <div class="level-item" id="responsive-upbar"></div>
-        <div class="level-item" id="responsive-upbar"></div>
-        <div class="level-item" id="responsive-upbar"></div>
+
+
+
 
         <div class="level-item" id="labels">
-          <p>
-            <strong>Molécules/Neurones associés</strong>
-          </p>
-            @foreach($article as $vi)
-           @foreach($vi->molecules as $molecule)
 
-          <p>
-            <a href="{{ route('show_molecule', [ 'id'=> $molecule->id ]) }}">{{$molecule->title}}</a>
-          </p>
-         @endforeach
-         @endforeach
+                <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span ><strong>Molécules/Neurones associés</strong></span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu5" role="menu">
+                          <div class="dropdown-content has-background-white">
+                            <div class="dropdown-item">
+                                    @foreach($article as $vi)
+                                    @foreach($vi->molecules as $molecule)
+
+                                   <p>
+                                     <a class="nav-link has-text-grey-dark is-family-primary has-text-weight-semibold is-size-6" href="{{ route('show_molecule', [ 'id'=> $molecule->id ]) }}">{{$molecule->title}}</a>
+                                   </p>
+                              <hr class="dropdown-divider">
+                              @endforeach
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+                      </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="level-right">
         <div class="level-item" id="labels">
-          <p>
-            <strong>Effets associés</strong>
-          </p>
 
-
-           @foreach($article as $vg)
-          @foreach($vg->lineaments as $lin)
-          <p>
-            <a href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->title}}</a>
-          </p>
-
-
-         @endforeach
-         @endforeach
-
-
+                <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span ><strong>Effets associés</strong></span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu5" role="menu">
+                          <div class="dropdown-content has-background-white">
+                            <div class="dropdown-item">
+                                    @foreach($article as $vg)
+                                    @foreach($vg->lineaments as $lin)
+                                    <p>
+                                      <a class="nav-link has-text-grey-dark is-family-primary has-text-weight-semibold is-size-6" href="{{ route('show_lineament', [ 'id'=> $lin->id ]) }}">{{$lin->title}}</a>
+                                    </p>
+                              <hr class="dropdown-divider">
+                              @endforeach
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+                      </div>
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <div class="box">
@@ -187,41 +266,7 @@
              <p>Vous devez être connecté pour pouvoir poster un commentaire</p>
           @endguest
   </section>
-  <div class="list is-hoverable">
-        <a class="list-item">
-          Featured
-        </a>
-        <a class="list-item">
-          All Posts
-        </a>
-        <a class="list-item is-active">
-          Announcements
-        </a>
-        <a class="list-item">
-          Business
-        </a>
-        <a class="list-item">
-          Community
-        </a>
-        <a class="list-item">
-          Data
-        </a>
-        <a class="list-item">
-          Editor Tools
-        </a>
-        <a class="list-item">
-          Education
-        </a>
-        <a class="list-item">
-          Engineering
-        </a>
-        <a class="list-item">
-          Events
-        </a>
-        <a class="list-item">
-          Policy
-        </a>
-      </div>
+
 </div>
 
 
