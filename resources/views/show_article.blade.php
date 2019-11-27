@@ -44,7 +44,7 @@
                                     @foreach($article as $art)
           @foreach($art->categories as $cate)
           <p>
-            <a class="nav-link has-text-grey-dark is-family-primary has-text-weight-semibold is-size-6" href="{{ route('show_category', [ 'key'=> $cate->Title ]) }}">{{$cate->title}}</a>
+            <a class="nav-link has-text-grey-dark is-family-primary has-text-weight-semibold is-size-6" href="{{ route('show_category', [ 'key'=> $cate->title ]) }}">{{$cate->title}}</a>
           </p>
                               <hr class="dropdown-divider">
                               @endforeach
@@ -203,8 +203,8 @@
 <div id="coms">
       <section class="section" id="formu">
         <h2 class="title" id="titles">Commentaires</h2>
-        @foreach($article as $comment)
-        @foreach($comment->comments as $comments)
+        @foreach($com as $comments)
+
         <div class="box">
             <article class="media">
               <div class="media-left">
@@ -247,9 +247,10 @@
 
 
         @endforeach
-       @endforeach
+        {{ $com->links('vendor.pagination.bulma') }}
       </section>
     </div>
+
 
     @auth
      @foreach($article as $article_id)
@@ -257,6 +258,7 @@
         @csrf
 
             <textarea id="content" name="content" -model="content" cols="87" rows="5" style="line-height: 105%"></textarea>
+            <input type="hidden" name="type" value="article">
             <button type="submit" class="button is-link" id="combutton">Envoyer</button>
           </form>
           @endforeach

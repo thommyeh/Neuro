@@ -28,4 +28,9 @@ class Lineament extends Model
     {
         return $this->belongsToMany('App\Article');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

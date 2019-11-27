@@ -64,17 +64,18 @@ class Controller extends BaseController
     public function showArticle($id){
 
         $article = Article::where('id', $id)->withCount('comments')->get();
+        $com = Comment::where('article_id', $id)->paginate(3);
 
 
 
-        return View('show_article', [ 'article' => $article]);
+        return View('show_article', [ 'article' => $article, 'com' => $com]);
 
 
     }
 
     public function showMolecule($id){
 
-        $molecule = Molecule::where('id', $id)->get();
+        $molecule = Molecule::where('id', $id)->withCount('comments')->get();
 
 
 
@@ -85,7 +86,7 @@ class Controller extends BaseController
 
     public function showLineament($id){
 
-        $lineament = Lineament::where('id', $id)->get();
+        $lineament = Lineament::where('id', $id)->withCount('comments')->get();
 
 
 
@@ -125,16 +126,49 @@ class Controller extends BaseController
     public function postComment(Request $request, $id){
 
         $user = Auth::user();
-        $article_id = $id;
 
-        $comment = new Comment();
-        $comment->content = $request->input('content');
-        $comment->article_id = $article_id;
-        $comment->user_id = $user->id;
-        $comment->save();
+        if ($request->input('type') == 'article') {
+            $article_id = $id;
+
+            $comment = new Comment();
+            $comment->content = $request->input('content');
+            $comment->article_id = $article_id;
+            $comment->user_id = $user->id;
+            $comment->save();
+            return redirect()->route('show_article', ['id' => $id]);
+        }
+
+        if ($request->input('type') == 'molecule') {
+            $molecule_id = $id;
+
+            $comment = new Comment();
+            $comment->content = $request->input('content');
+            $comment->molecule_id = $molecule_id;
+            $comment->user_id = $user->id;
+            $comment->save();
+            return redirect()->route('show_molecule', ['id' => $id]);
+        }
+
+        if ($request->input('type') == 'lineament') {
+            $lineament_id = $id;
+
+            $comment = new Comment();
+            $comment->content = $request->input('content');
+            $comment->lineament_id = $lineament_id;
+            $comment->user_id = $user->id;
+            $comment->save();
+            return redirect()->route('show_lineament', ['id' => $id]);
+        }
+
+        else{
+            return;
+        }
 
 
-        return redirect()->route('show_article', ['id' => $id]);
+
+
+
+
 
 
 
