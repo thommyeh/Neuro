@@ -7,19 +7,20 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Neglineament
- * 
+ *
  * @property int $id
- * 
+ * @property string $Designation
+ *
  * @property \App\Models\Lineament $lineament
  * @property \Illuminate\Database\Eloquent\Collection $articles
  *
  * @package App\Models
  */
-class Neglineament extends Eloquent
+class Neglineament extends Model
 {
 	protected $table = 'neglineament';
 	public $incrementing = false;
@@ -27,6 +28,10 @@ class Neglineament extends Eloquent
 
 	protected $casts = [
 		'id' => 'int'
+    ];
+    protected $fillable = [
+		'Designation'
+
 	];
 
 	public function lineament()

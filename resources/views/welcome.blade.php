@@ -6,7 +6,7 @@
     <div class="box">
       <h1 class="title" id="titles">Pourquoi Interface Neuronale?</h1>
       <p>
-        <img src="" id="logo5">
+        <img src="{{ asset('img/logo6.jpg') }}" id="logo5">
       </p>
       <br>
       <p>
@@ -24,15 +24,15 @@
     </div>
     <div class="box">
       <p>
-        <h3 class="title" id="titles">Actualités liées a la neurologie</h3>
+        <h3 class="title" id="titles">Dernières actualités liées a la neurologie</h3>
       </p>
       <br>
-     
+
       <p id="liens">
      @foreach($links as $liens)
-     
-     
-        <a href='{{$liens->Url}}'>{{$liens->Title}}</a>
+
+
+        <a href='{{$liens->url}}'>{{$liens->title}}</a>
       </p>
       @endforeach
     </div>

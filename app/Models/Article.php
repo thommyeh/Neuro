@@ -7,16 +7,16 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Article
- * 
+ *
  * @property int $id
  * @property string $Title
  * @property string $Content
  * @property \Carbon\Carbon $Datec
- * 
+ *
  * @property \Illuminate\Database\Eloquent\Collection $categories
  * @property \Illuminate\Database\Eloquent\Collection $lineaments
  * @property \Illuminate\Database\Eloquent\Collection $links
@@ -27,7 +27,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Article extends Eloquent
+class Article extends Model
 {
 	protected $table = 'article';
 	public $timestamps = false;

@@ -7,20 +7,20 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ArticleNeglineament
- * 
+ *
  * @property int $article_id
  * @property int $neglineament_id
- * 
+ *
  * @property \App\Models\Neglineament $neglineament
  * @property \App\Models\Article $article
  *
  * @package App\Models
  */
-class ArticleNeglineament extends Eloquent
+class ArticleNeglineament extends Model
 {
 	protected $table = 'article_neglineament';
 	public $incrementing = false;

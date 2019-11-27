@@ -7,20 +7,20 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ArticleLink
- * 
+ *
  * @property int $article_id
  * @property int $link_id
- * 
+ *
  * @property \App\Models\Article $article
  * @property \App\Models\Link $link
  *
  * @package App\Models
  */
-class ArticleLink extends Eloquent
+class ArticleLink extends Model
 {
 	protected $table = 'article_link';
 	public $incrementing = false;

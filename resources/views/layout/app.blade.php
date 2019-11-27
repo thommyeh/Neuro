@@ -1,16 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Interface neuronale</title>
-    <meta name="description" content="website description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="website keywords, website keywords" />
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-    </script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
   </head>
   <body>
     <section class="hero is-info is-medium has-text-white-bis" id="bar">
@@ -28,21 +25,27 @@
                 </div>
                 <div class="dropdown-menu is-boxed" id="dropdown-menu4" role="menu">
                   <div class="dropdown-content has-background-grey-dark">
-                   
-                    <div class="dropdown-item">
-                      <a class="has-text-light" href="">Votre compte</a>
-                    </div>
-                    <div class="dropdown-item">
-                      <a class="has-text-light" href="">Se déconnecter</a>
-                    </div>
-                   
+
+
+                    @guest
                     <div class="dropdown-item">
                       <a class="has-text-light"  href="/login">Se connecter</a>
                     </div>
+                    @if (Route::has('register'))
                     <div class="dropdown-item">
                       <a class="has-text-light" href="/register">Créer un compte</a>
                     </div>
-                    
+                    @endif
+                    @else
+                    <div class="dropdown-item">
+                        <a class="has-text-light" href="/profil">Votre compte
+                        <span class="icon"><i class="fa fa-user"></i></span></a>
+                      </div>
+                      <div class="dropdown-item">
+                        <a class="has-text-light" href="/logout">Se déconnecter
+                            <span class="icon"><i class="fa fa-sign-out-alt"></i></span></a>
+                      </div>
+                      @endguest
                   </div>
                 </div>
               </div>
@@ -54,10 +57,10 @@
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active" href="">Accueil</a>
-                <a class="navbar-item" href="">Articles</a>
-                <a href="" class="navbar-item">Molécules/Neurones</a>
-                <a href="" class="navbar-item">Traits de personnalités</a>
+                <a class="navbar-item" href="{{route('home')}}">Accueil</a>
+                <a class="navbar-item" href="{{route('allArticles')}}">Articles</a>
+                <a href="{{route('allMolecules')}}" class="navbar-item">Molécules/Neurones</a>
+                <a href="{{route('allLineaments')}}" class="navbar-item">Traits de personnalités</a>
                 <a class="navbar-item">Contactez nous</a>
               </div>
             </div>
@@ -74,11 +77,67 @@
       <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot"></div>
     </section>
+
+
+
+
     <section class="main-content columns is-fullheight has-background-white-ter">
     @yield('content')
       <!-- Rendering of the Sidebar via the MenuAction, so it can be easily implemented on every pages -->
-      
+      <aside class="column is-3 is-narrow-mobile is-fullheight section is-hidden-mobile">
+        <ul class="menu-list">
+          <li>
+            <a href="#" class="is-active has-background-link">
+              <span class="icon"><i class="fa fa-search"></i></span>
+               Recherche
+            </a>
+            <ul>
+              <li>
+                    <form action="{{route('search')}}" method="post" class="form-example">
+                            @csrf
+                            <div class="form-example">
+
+                              <input type="text" name="search" id="search">
+                            </div>
+
+
+                            </div>
+                          </form>
+            </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="is-active has-background-link">
+              <span class="icon"><i class="fa fa-newspaper"></i></span>
+               Derniers articles
+            </a>
+            <ul>
+              <li>
+                @foreach($sorted as $article)
+                <p>
+                  <a href="{{ route('show_article', [ 'id'=> $article->id ]) }}">{{$article->title}}</a>
+                </p>
+                @endforeach
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="is-active has-background-link">
+              <span class="icon"><i class="fa fa-bars"></i></span>
+               Catégories
+            </a>
+            <ul>
+              <li>
+               @foreach($categories as $cate)
+                <a class="nav-link" href="{{ route('show_category', [ 'key'=> $cate->title ]) }}">{{$cate->title}}</a>
+             @endforeach
+            </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
     </section>
+
     <footer class="footer has-background-grey-darker" id="ft">
       <div class="level">
         <div class="level-left">
@@ -150,24 +209,24 @@
 <div>
         <p class="has-text-white has-text-centered" id="text-foot">
           <strong class="has-text-white has-text-weight-normal is-size-6">Interface neuronale</strong>
-           par 
+           par
           <a href="https://jgthms.com">Heym Thomas</a>
         </p>
       </div>
 <div>
           <p class="has-text-white has-text-centered" id="text-foot1">
-        <a href="" target="_blank">Mentions légales</a> 
+        <a href="" target="_blank">Mentions légales</a>
       </p>
     </div>
       </div>
     </footer>
-     
+
      <script>
-    
+
 </script>
-    <script src="{{ asset('js/bulma.js') }}"></script>
-     <script src="{{ asset('js/ind.js') }}"></script>
-{% endblock %} 
+
+
+
   </body>
 </html>
 

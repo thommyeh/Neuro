@@ -7,16 +7,16 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Lineament
- * 
+ *
  * @property int $id
  * @property string $Designation
  * @property string $classification
  * @property string $Content
- * 
+ *
  * @property \Illuminate\Database\Eloquent\Collection $articles
  * @property \Illuminate\Database\Eloquent\Collection $links
  * @property \Illuminate\Database\Eloquent\Collection $molecules
@@ -25,7 +25,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Lineament extends Eloquent
+class Lineament extends Model
 {
 	protected $table = 'lineament';
 	public $timestamps = false;
