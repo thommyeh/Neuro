@@ -8,9 +8,8 @@ class Article extends Model
 {
     public $timestamps = true;
 
-
     protected $fillable = [
-		'title', 'content',
+        'title', 'content',
     ];
 
     public function categories()
@@ -37,5 +36,4 @@ class Article extends Model
     {
         return $this->hasMany('App\Comment');
     }
-
 }

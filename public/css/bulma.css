@@ -6600,6 +6600,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-burger span:nth-child(1) {
   top: calc(50% - 6px);
+
 }
 
 .navbar-burger span:nth-child(2) {
@@ -6848,6 +6849,7 @@ a.navbar-item:hover, a.navbar-item.is-active,
   }
   .navbar-item.is-active .navbar-dropdown, .navbar-item.is-hoverable:hover .navbar-dropdown {
     display: block;
+
   }
   .navbar.is-spaced .navbar-item.is-active .navbar-dropdown, .navbar-item.is-active .navbar-dropdown.is-boxed, .navbar.is-spaced .navbar-item.is-hoverable:hover .navbar-dropdown, .navbar-item.is-hoverable:hover .navbar-dropdown.is-boxed {
     opacity: 1;
